@@ -10,7 +10,7 @@
             </ScrollView>
         </RefreshView>-->
         <StackLayout Orientation="Horizontal" VerticalOptions="Start">
-            <Button Text="Home" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Home" Clicked="LoadHome_Clicked" HorizontalOptions="FillAndExpand"></Button>
             <Button Text="Youtube" Clicked="Youtube_Clicked"  HorizontalOptions="FillAndExpand"></Button>
             <Button Text="Reload" Clicked="Reload_Clicked" HorizontalOptions="FillAndExpand"></Button>
         </StackLayout>

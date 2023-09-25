@@ -15,9 +15,24 @@ namespace LearningSoftwareApp
         {
             InitializeComponent();
             LoadWebsite();
+            WebPage.Navigating += (s, e) =>
+            {
+                // https://theconfuzedsourcecode.wordpress.com/2016/03/04/how-to-handle-xamarin-forms-webview-internal-navigations/
+                if (e.Url.StartsWith("https://www.whateverlink112312.com.sg/"))
+                {
+                    // now do this instead of navigating within the WebView...
+                    //....
+                    //....
+                    // and finally cancel the default WebView Navigation...
+                    e.Cancel = true;
+                }
+                e.Cancel = true;
+                // https://learn.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android
+                _ = Browser.OpenAsync(e.Url, BrowserLaunchMode.SystemPreferred);
+            };
         }
-        
-        private void Button_Clicked(object sender, EventArgs e)
+
+        private void LoadHome_Clicked(object sender, EventArgs e)
         {
             LoadWebsite();
         }
