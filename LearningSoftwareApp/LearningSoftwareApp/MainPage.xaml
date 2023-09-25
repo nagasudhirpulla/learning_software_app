@@ -3,17 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LearningSoftwareApp.MainPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" IconImageSource="refresh_icon.png" Text="Reload" Priority="2" Clicked="Reload_Clicked"/>
+        <ToolbarItem Order="Primary" IconImageSource="youtube_icon.png" Text="YouTube" Priority="1" Clicked="Youtube_Clicked"/>
+        <ToolbarItem Order="Primary" IconImageSource="home_icon.png" Text="Home" Priority="0" Clicked="LoadHome_Clicked"/>
+    </ContentPage.ToolbarItems>
     <StackLayout>
         <WebView x:Name="WebPage" VerticalOptions="FillAndExpand" HeightRequest="600"></WebView>
         <!--<RefreshView x:Name="RefreshHost" RefreshColor="#729c0b" Refreshing="RefreshView_Refreshing">
             <ScrollView>
             </ScrollView>
         </RefreshView>-->
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+        <!--<StackLayout Orientation="Horizontal" VerticalOptions="Start">
             <Button Text="Home" Clicked="LoadHome_Clicked" HorizontalOptions="FillAndExpand"></Button>
             <Button Text="Youtube" Clicked="Youtube_Clicked"  HorizontalOptions="FillAndExpand"></Button>
             <Button Text="Reload" Clicked="Reload_Clicked" HorizontalOptions="FillAndExpand"></Button>
-        </StackLayout>
+        </StackLayout>-->
     </StackLayout>
 
 </ContentPage>

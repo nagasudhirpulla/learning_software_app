@@ -11,30 +11,27 @@ namespace LearningSoftwareApp
 {
     public partial class MainPage : ContentPage
     {
+        private const string HomePageUrl = "https://nagasudhir.blogspot.com";
+        private const string YoutubeUrl = "https://www.youtube.com/@learningsoftwareskills";
         public MainPage()
         {
             InitializeComponent();
-            LoadWebsite();
+            LoadHomePage();
             WebPage.Navigating += (s, e) =>
             {
                 // https://theconfuzedsourcecode.wordpress.com/2016/03/04/how-to-handle-xamarin-forms-webview-internal-navigations/
-                if (e.Url.StartsWith("https://www.whateverlink112312.com.sg/"))
+                if (!e.Url.Equals(HomePageUrl) && !e.Url.StartsWith($"{HomePageUrl}/?"))
                 {
-                    // now do this instead of navigating within the WebView...
-                    //....
-                    //....
-                    // and finally cancel the default WebView Navigation...
                     e.Cancel = true;
+                    // https://learn.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android
+                    _ = Browser.OpenAsync(e.Url, BrowserLaunchMode.SystemPreferred);
                 }
-                e.Cancel = true;
-                // https://learn.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android
-                _ = Browser.OpenAsync(e.Url, BrowserLaunchMode.SystemPreferred);
             };
         }
 
         private void LoadHome_Clicked(object sender, EventArgs e)
         {
-            LoadWebsite();
+            LoadHomePage();
         }
 
         private void Reload_Clicked(object sender, EventArgs e)
@@ -42,15 +39,15 @@ namespace LearningSoftwareApp
             WebPage.Reload();
         }
 
-        private void LoadWebsite()
+        private void LoadHomePage()
         {
-            WebPage.Source = "https://nagasudhir.blogspot.com";
+            WebPage.Source = HomePageUrl;
         }
 
         private void Youtube_Clicked(object sender, EventArgs e)
         {
-            //Device.OpenUri(new Uri("https://www.youtube.com/@learningsoftwareskills"));
-            Launcher.OpenAsync(new Uri("https://www.youtube.com/@learningsoftwareskills"));
+            //Device.OpenUri(new Uri(YoutubeUrl));
+            Launcher.OpenAsync(new Uri(YoutubeUrl));
         }
 
         protected override bool OnBackButtonPressed()
