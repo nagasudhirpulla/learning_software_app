@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearningSoftwareApp.MainPage">
+
+    <StackLayout>
+        <WebView x:Name="WebPage" VerticalOptions="FillAndExpand" HeightRequest="600"></WebView>
+        <!--<RefreshView x:Name="RefreshHost" RefreshColor="#729c0b" Refreshing="RefreshView_Refreshing">
+            <ScrollView>
+            </ScrollView>
+        </RefreshView>-->
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+            <Button Text="Home" Clicked="Button_Clicked" HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Youtube" Clicked="Youtube_Clicked"  HorizontalOptions="FillAndExpand"></Button>
+            <Button Text="Reload" Clicked="Reload_Clicked" HorizontalOptions="FillAndExpand"></Button>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
