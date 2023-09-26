@@ -29,11 +29,6 @@ namespace LearningSoftwareApp
             };
         }
 
-        private void LoadHome_Clicked(object sender, EventArgs e)
-        {
-            LoadHomePage();
-        }
-
         private void Reload_Clicked(object sender, EventArgs e)
         {
             WebPage.Reload();
