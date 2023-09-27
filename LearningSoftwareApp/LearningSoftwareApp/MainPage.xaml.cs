@@ -11,7 +11,7 @@ namespace LearningSoftwareApp
 {
     public partial class MainPage : ContentPage
     {
-        private const string HomePageUrl = "https://nagasudhir.blogspot.com";
+        private const string HomePageUrl = "https://nagasudhir.blogspot.com/2020/04/taming-python-table-of-contents.html";
         private const string YoutubeUrl = "https://www.youtube.com/@learningsoftwareskills";
         public MainPage()
         {
