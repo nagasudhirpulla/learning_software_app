@@ -20,7 +20,7 @@ namespace LearningSoftwareApp
             WebPage.Navigating += (s, e) =>
             {
                 // https://theconfuzedsourcecode.wordpress.com/2016/03/04/how-to-handle-xamarin-forms-webview-internal-navigations/
-                if (!e.Url.Equals(HomePageUrl) && !e.Url.StartsWith($"{HomePageUrl}/?"))
+                if (!e.Url.Equals(HomePageUrl) && !e.Url.StartsWith($"{HomePageUrl}?"))
                 {
                     e.Cancel = true;
                     // https://learn.microsoft.com/en-us/xamarin/essentials/open-browser?tabs=android
